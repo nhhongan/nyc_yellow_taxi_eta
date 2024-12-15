@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def get_current_weather(lat, lng):
-    API_KEY = os.getenv('API_KEY')
-    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid={API_KEY}"
+    WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
+    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid={WEATHER_API_KEY}"
     response = requests.get(url)
 
     if response.status_code == 200:
