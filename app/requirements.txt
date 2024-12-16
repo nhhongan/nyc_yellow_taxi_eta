@@ -1,6 +1,8 @@
 fastapi
 uvicorn
 pydantic
+pandas
+requests
 scikit-learn
 shapely
 python-dotenv

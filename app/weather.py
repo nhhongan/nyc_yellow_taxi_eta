@@ -9,7 +9,10 @@ def get_current_weather(lat, lng):
     response = requests.get(url)
 
     if response.status_code == 200:
-        return response.json()
+        resp = response.json()
+        if (resp['weather'][0]['main'] == 'Rain'):
+            return 1
+        return 0
     else:
         response.raise_for_status()
 
