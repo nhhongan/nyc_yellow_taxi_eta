@@ -11,7 +11,7 @@ class TaxiZoneFinder:
         self.zones_df = pd.read_csv(csv_path)
         self.zones_df['geometry'] = self.zones_df['zone_geom'].apply(wkt.loads)
 
-    def get_zone_id(self, lat: float, lng: float) -> dict:
+    def get_zone_info(self, lat: float, lng: float) -> dict:
         """
         Get taxi zone ID for a given latitude and longitude
         Args:
@@ -35,7 +35,7 @@ class TaxiZoneFinder:
         except Exception as e:
             print(f"Error finding zone: {str(e)}")
             return None
-
+        
 def main():
     taxi_zone_data_path = "../data/taxi_zone_lookup.csv"
     finder = TaxiZoneFinder(taxi_zone_data_path)
